@@ -1,9 +1,7 @@
 package com.jojoldu.book.springboot.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.jojoldu.book.springboot.web.dto.HelloResponseDto;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -11,5 +9,11 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String hello() {
         return "hello";
+    }
+
+    @GetMapping("/hello/dto")
+    public HelloResponseDto helloDto(@RequestParam("name") String name,
+                                     @RequestParam("amount") int amount) {
+        return new HelloResponseDto(name, amount);
     }
 }
