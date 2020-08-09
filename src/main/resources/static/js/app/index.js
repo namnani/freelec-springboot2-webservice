@@ -34,7 +34,7 @@ var index = {
         });
     },
     update : function () {
-        var date = {
+        var data = {
             title: $('#title').val(),
             content: $('#content').val()
         };
@@ -43,7 +43,7 @@ var index = {
 
         $.ajax({
             type: 'PUT',
-            url: 'api/v1/posts/'+id,
+            url: '/api/v1/posts/'+id,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
