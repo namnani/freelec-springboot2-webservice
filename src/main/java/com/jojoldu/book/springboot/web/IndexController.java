@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.service.PostsService;
+import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String idnex(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc())
+        model.addAttribute("posts", postsService.findAllDesc());
         return "index";
     }
 
